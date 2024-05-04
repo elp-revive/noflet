@@ -11,7 +11,7 @@ like macros.
 
 It's great for test code when you need to mock another function.
 
-This is useful for definining functions that overide a base definition
+This is useful for defining functions that override a base definition
 in some way. You get access to the original (before you re-defined it)
 function through a different name.
 
@@ -33,12 +33,12 @@ Use it like this:
 This specifies that two functions should be overridden:
 
 * `find-file-noselect` is changed so that if the file-name begins with `#` a different file-name altogether is opened
-* `expand-file-name` is changed so that if the file-name begins with `#` it's resolved via {{{/tmp}}}
+* `expand-file-name` is changed so that if the file-name begins with `#` it's resolved via `/tmp`
 
-In both cases {{{this-fn}}} is used to access the original function
+In both cases `this-fn` is used to access the original function
 definition of these common Emacs functions.
 
-=== Decorating results ===
+## Decorating results
 
 `noflet` can also be used to decorate results, just like `around-advice`:
 
@@ -56,7 +56,7 @@ This overrides `find-file` to set a local variable. There are
 surely better ways to do it than this but it illustrates the point.
 
 
-=== Lexical version ===
+## Lexical version
 
 Because we include a good indenting function we also include a lexical
 `flet`. It's just a wrapper for `cl-flet`.
